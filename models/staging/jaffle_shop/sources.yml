@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: jaffle_shop
-    database: dbt-training-445820   # Update this with the correct database name
-    schema: dbt_ll                  
+  - name: jaffle_shop  # Logical source name
+    database: dbt-training-445820  # BigQuery project ID
+    schema: dbt_ll  # BigQuery dataset name
     tables:
-      - name: customers
-      - name: orders
+      - name: jaffle_customers
+      - name: jaffle_orders

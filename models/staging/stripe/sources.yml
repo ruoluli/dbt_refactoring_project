@@ -1,11 +1,8 @@
 version: 2
 
 sources:
-  - name: stripe
-    database: dbt-training-445820   # Update this with the correct database name
-    schema: dbt_ll   
+  - name: stripe  # This should match the 'stripe' source in your model
+    database: dbt-training-445820  # BigQuery project ID
+    schema: dbt_ll  # BigQuery dataset name
     tables:
-      - name: payments
-
-
-
+      - name: stripe_payments  # This should match exactly with your source reference
