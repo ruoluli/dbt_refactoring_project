@@ -5,5 +5,5 @@ sources:
     database: dbt-training-445820  # BigQuery project ID
     schema: dbt_ll  # BigQuery dataset name
     tables:
-      - name: jaffle_customers
-      - name: jaffle_orders
+      - name: jaffle_shop_customers
+      - name: jaffle_shop_orders
