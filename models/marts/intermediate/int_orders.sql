@@ -1,5 +1,4 @@
-with 
-
+with
 
 orders as (
 
@@ -28,14 +27,11 @@ paid_orders as (
         orders.order_id,
         orders.customer_id,
         orders.order_placed_at,
-        orders.order_status,	        
+        orders.order_status,            
         completed_payments.total_amount_paid,
         completed_payments.payment_finalized_date,
-        customers.customer_first_name,
-        customers.customer_last_name
     from orders
     left join completed_payments on orders.order_id = completed_payments.order_id
-    left join customers on orders.customer_id = customers.customer_id 
 )
 
 select * from paid_orders
