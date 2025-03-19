@@ -37,7 +37,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_refactoring_project:
+      #all models should have unique and not_null
+      +required_tests: {"unique.*|not_null": 1}
     # Applies to all files under models/example/
-    example:
       +materialized: table
+      marts:
+        +required_tests:{"relationship.*": 1}
+
       
