@@ -6,3 +6,18 @@ sources:
     schema: dbt_ll  # BigQuery dataset name
     tables:
       - name: stripe_payments  # This should match exactly with your source reference
+        columns:
+          - name: ID
+            tests:
+              - unique:
+                  config:
+                    severity: warn
+                    error_if: ">100"
+                    where: status = 'success'
+                    limit: 10
+          - name: status
+            tests:
+              - unique:
+                  config:
+                    store_failures: true
+                    
