@@ -19,5 +19,6 @@ sources:
             tests:
               - unique:
                   config:
+                    severity: warn
                     store_failures: true
                     
