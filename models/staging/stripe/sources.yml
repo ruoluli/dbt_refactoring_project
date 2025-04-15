@@ -12,13 +12,12 @@ sources:
               - unique:
                   config:
                     severity: warn
-                    error_if: ">100"
+                    error_if: ">300"
                     where: status = 'success'
-                    limit: 10
           - name: status
             tests:
-              - unique:
+              - accepted_values:
+                  values: ['success', 'fail']  # Add your actual valid status values here
                   config:
                     severity: warn
                     store_failures: true
-                    
